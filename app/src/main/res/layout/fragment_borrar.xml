@@ -6,48 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".fragmentos.BorrarFragment">
 
-    <TextView
-        android:id="@+id/txtBorrado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/txt_borrado"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edTxtDniBorrado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="@string/ed_txt_dni"
-        android:inputType="textPersonName"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBorrado" />
+        <TextView
+            android:id="@+id/txtBorrado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="70dp"
+            android:text="@string/txt_borrado"
+            android:textSize="22sp" />
 
-    <Button
-        android:id="@+id/btCancelarBorrado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/bt_cancelar"
-        app:layout_constraintEnd_toStartOf="@+id/btAceptarBorrado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edTxtDniBorrado" />
+        <EditText
+            android:id="@+id/edTxtDniBorrado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="75dp"
+            android:ems="10"
+            android:hint="@string/ed_txt_dni"
+            android:inputType="textPersonName"
+            android:textSize="22sp" />
 
-    <Button
-        android:id="@+id/btAceptarBorrado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/bt_aceptar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btCancelarBorrado"
-        app:layout_constraintTop_toBottomOf="@+id/edTxtDniBorrado" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btCancelarBorrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="90dp"
+                android:text="@string/bt_cancelar" />
+
+            <Button
+                android:id="@+id/btAceptarBorrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bt_aceptar" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

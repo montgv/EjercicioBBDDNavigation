@@ -27,4 +27,9 @@
     <string name="ed_txt_apellidos">Introduce los Apellidos</string>
     <string name="bt_cancelar">CANCELAR</string>
     <string name="bt_aceptar">ACEPTAR</string>
+
+    <string-array name="spinnerSexo">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
 </resources>
