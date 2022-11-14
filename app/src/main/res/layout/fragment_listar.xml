@@ -7,7 +7,7 @@
     tools:context=".fragmentos.ListarFragment" >
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listViewListar"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:layout_marginStart="16dp"

@@ -1,4 +1,4 @@
-package com.example.ejerciciobbddnavigation.objetos;
+package com.example.ejerciciobbddnavigation;
 
 import android.os.Bundle;
 import android.view.View;

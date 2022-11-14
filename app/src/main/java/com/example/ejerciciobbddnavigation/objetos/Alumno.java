@@ -1,4 +1,4 @@
-package com.example.ejerciciobbddnavigation.basedatos;
+package com.example.ejerciciobbddnavigation.objetos;
 
 //Definimos la clase Alumno
 public class Alumno {
