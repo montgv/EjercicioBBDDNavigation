@@ -1,11 +1,7 @@
 package com.example.ejerciciobbddnavigation;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.Menu;
 
-import com.example.ejerciciobbddnavigation.R;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -30,13 +26,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
+        //binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.inicioFragment, R.id.matriculaAlumnoFragment, R.id.modificaFragment, R.id.borrarFragment, R.id.listarFragment)
+                R.id.nav_incio, R.id.nav_matricular, R.id.nav_modifica, R.id.nav_borrar, R.id.nav_listar)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

@@ -33,8 +33,8 @@ public class ListarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_listar, container, false);
+        bindingListar = FragmentListarBinding.inflate(inflater, container,false);
+        return bindingListar.getRoot();
     }
 
     @Override
@@ -72,7 +72,7 @@ public class ListarFragment extends Fragment {
         bindingListar.listViewListar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(view.getContext(), "Alumno con DNI: " + listaAlumnos.get(0), Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "Alumno con DNI: " + listaAlumnos.get(i).getDni(), Toast.LENGTH_SHORT).show();
             }
         });
     }

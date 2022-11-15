@@ -25,8 +25,8 @@ public class BorrarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_borrar, container, false);
+        bindingBorrar = FragmentBorrarBinding.inflate(inflater, container, false);
+        return bindingBorrar.getRoot();
     }
 
     @Override
@@ -71,7 +71,7 @@ public class BorrarFragment extends Fragment {
         bindingBorrar.btCancelarBorrado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.inicioFragment);
+                Navigation.findNavController(view).navigate(R.id.nav_incio);
             }
         });
     }
