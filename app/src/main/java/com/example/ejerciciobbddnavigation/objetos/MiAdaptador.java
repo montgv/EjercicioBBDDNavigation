@@ -54,7 +54,7 @@ public class MiAdaptador extends ArrayAdapter {
 
         //Si el dato de la persona actual es igual al introducido la cambia la imagen por una concreta
         //sino le cambia la imagen por otra
-        if (alumnoActual.getSexo() == "Hombre") {
+        if (alumnoActual.getSexo() == Sexo.HOMBRE) {
             imageViewPersona.setImageResource(R.drawable.boy_avatar_icon_148454);
         } else {
             imageViewPersona.setImageResource(R.drawable.girl_avatar_icon_148461);

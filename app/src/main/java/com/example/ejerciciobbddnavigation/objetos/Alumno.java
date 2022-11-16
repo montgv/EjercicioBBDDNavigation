@@ -6,10 +6,10 @@ public class Alumno {
     private String dni;
     private String nombre;
     private String apellidos;
-    private String sexo;
+    private Sexo sexo;
 
     //Declaramos un constructor personas con los diferentes atributos
-    public Alumno(String dni, String nombre, String apellidos, String sexo) {
+    public Alumno(String dni, String nombre, String apellidos, Sexo sexo) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -38,10 +38,10 @@ public class Alumno {
         this.apellidos = apellidos;
     }
 
-    public String getSexo() {
+    public Sexo getSexo() {
         return sexo;
     }
-    public void setSexo(String sexo) {
+    public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
 }

@@ -50,18 +50,18 @@ public class BorrarFragment extends Fragment {
                 //Comprobamos que la variable es distinta de vacio
                 if (!dni.isEmpty()) {
                     //Guardamos en una variable de tipo numero si se borrado algun alumno de la base de datos
-                    int cantidad = baseDatos.delete("alumnos", "dni="+dni, null);
+                    int cantidad = baseDatos.delete("alumnos", "dni=?", new String[]{dni});
                     //Cerramos la base de datos
                     baseDatos.close();
                     //Comprobamos si cantidad es igual 1 significa que se si ha borrado un alumno,
                     //muestra con toast las diferentes opciones
                     if (cantidad == 1) {
-                        Toast.makeText(view.getContext(), "Alumno eliminado corectamente.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Alumno eliminado corectamente.", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(view.getContext(), "No existe el alumno.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "No existe el alumno.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(view.getContext(), "Debes introducir todos los campos.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Debes introducir todos los campos.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

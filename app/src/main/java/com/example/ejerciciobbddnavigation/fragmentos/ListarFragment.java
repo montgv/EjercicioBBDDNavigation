@@ -19,6 +19,7 @@ import com.example.ejerciciobbddnavigation.basedatos.AdminSQLiteOpenHelper;
 import com.example.ejerciciobbddnavigation.databinding.FragmentListarBinding;
 import com.example.ejerciciobbddnavigation.objetos.Alumno;
 import com.example.ejerciciobbddnavigation.objetos.MiAdaptador;
+import com.example.ejerciciobbddnavigation.objetos.Sexo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class ListarFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //Creamos una instancia de la subclase SQLiteOpenHelper para poder acceder a la base de datos
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(view.getContext(), "escuela", null, 1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getContext(), "escuela", null, 1);
         //Obtienemos el repositorio de datos en modo de escritura
         SQLiteDatabase baseDatos = admin.getReadableDatabase();
 
@@ -58,14 +59,18 @@ public class ListarFragment extends Fragment {
                 nombre = cursor.getString(1);
                 apellidos = cursor.getString(2);
                 sexo = cursor.getString(3);
-                listaAlumnos.add(new Alumno(dni, nombre, apellidos, sexo));
+                if (sexo.equals("Hombre")) {
+                    listaAlumnos.add(new Alumno(dni, nombre, apellidos, Sexo.HOMBRE));
+                } else {
+                    listaAlumnos.add(new Alumno(dni, nombre, apellidos, Sexo.MUJER));
+                }
             } while (cursor.moveToNext());
         }
 
         //Estamos creando un adaptador que lo que hace es devolver una vista para cada objeto
         //de una coleccion de objetos de datos, es decir, para los diferentes objetos que tiene
         //el arrayList, y despues, asociamos al binding a la listView para que use ese adaptador
-        MiAdaptador miAdaptador = new MiAdaptador(view.getContext(), R.layout.alumnos_item, listaAlumnos);
+        MiAdaptador miAdaptador = new MiAdaptador(getContext(), R.layout.alumnos_item, listaAlumnos);
         bindingListar.listViewListar.setAdapter(miAdaptador);
 
         //Definimos un escuchador para cuando pulsemos en un item del listView haga lo que se le indica

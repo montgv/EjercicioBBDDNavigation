@@ -77,7 +77,8 @@ public class MatriculaAlumnoFragment extends Fragment {
                 if (!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()) {
                     if (sexo == 0) {
                         genero = "Hombre";
-                    } else {
+                    }
+                    if (sexo == 1) {
                         genero = "Mujer";
                     }
 

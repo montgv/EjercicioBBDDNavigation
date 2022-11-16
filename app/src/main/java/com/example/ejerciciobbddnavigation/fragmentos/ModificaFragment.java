@@ -64,7 +64,7 @@ public class ModificaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //Creamos una instancia de la subclase SQLiteOpenHelper para poder acceder a la base de datos
-                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(view.getContext(), "escuela", null, 1);
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getContext(), "escuela", null, 1);
                 //Obtienemos el repositorio de datos en modo de escritura
                 SQLiteDatabase baseDatos = admin.getWritableDatabase();
 
@@ -79,7 +79,8 @@ public class ModificaFragment extends Fragment {
                 if (!dni.isEmpty() && !nombre.isEmpty() && !apellidos.isEmpty()) {
                     if (sexo == 0) {
                         genero = "Hombre";
-                    } else {
+                    }
+                    if (sexo == 1) {
                         genero = "Mujer";
                     }
                     //Creamos un nuevo mapa de valores, donde los nombres de las columnas son las claves
@@ -95,12 +96,12 @@ public class ModificaFragment extends Fragment {
                     //Comprobamos si cantidad es igual 1 significa que se si ha borrado un alumno,
                     //muestra con toast las diferentes opciones
                     if (cantidad == 1) {
-                        Toast.makeText(view.getContext(), "Alumno modificado correctamente.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Alumno modificado correctamente.", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(view.getContext(), "No existe el alumno.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "No existe el alumno.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(view.getContext(), "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Debes introducir todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
